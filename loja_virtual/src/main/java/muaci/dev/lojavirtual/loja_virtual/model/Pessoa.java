@@ -2,6 +2,8 @@ package muaci.dev.lojavirtual.loja_virtual.model;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -16,6 +18,8 @@ public abstract class Pessoa {
     private String nome;
     private String email;
     private String telefone;
+    @OneToMany(mappedBy = "pessoa", orphanRemoval = true, cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    private List<Endereco> enderecos = new ArrayList<Endereco>();
 
     public Long getId() {
         return id;
