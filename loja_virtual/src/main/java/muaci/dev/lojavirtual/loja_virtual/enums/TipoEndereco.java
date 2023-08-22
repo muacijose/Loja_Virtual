@@ -2,7 +2,7 @@ package muaci.dev.lojavirtual.loja_virtual.enums;
 
 public enum TipoEndereco {
 
-    COBRANCA("Cobraça"),
+    COBRANCA("Cobrança"),
     ENTREGA("Entrega");
 
     private String descricao;
