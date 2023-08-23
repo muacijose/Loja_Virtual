@@ -3,7 +3,6 @@ package muaci.dev.lojavirtual.loja_virtual.model;
 import jakarta.persistence.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
@@ -28,7 +27,9 @@ public class Usuario implements UserDetails {
     name = "unique_acesso_user"),
     joinColumns = @JoinColumn(name = "usuario_id", referencedColumnName = "id", table = "usuario",
              unique = false, foreignKey = @ForeignKey(name = "usuario_fk",value = ConstraintMode.CONSTRAINT)),
-             inverseJoinColumns = @JoinColumn(name = "acesso_id", unique = false, referencedColumnName = "id",table = "acesso",foreignKey = @ForeignKey(name = "acesso_fk",value = ConstraintMode.CONSTRAINT)))
+
+             inverseJoinColumns = @JoinColumn(name = "acesso_id", unique = false, referencedColumnName = "id",table = "acesso",
+                     foreignKey = @ForeignKey(name = "acesso_fk",value = ConstraintMode.CONSTRAINT)))
 
     private List<Acesso> acessos;
 
